@@ -8,11 +8,11 @@ function Filters() {
     const [submit, setSubmit] = useState(false);
 
     async function fetchData() {
-        await fetch(`https://api.spoonacular.com/food/menuItems/search?query=${search}&apiKey=1a95ef22be8e4212b66f76c9dddb5d41`)
+        await fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${search}&apiKey=3201bc5a392343d6ac18d63fe1033452`)
             .then(async (response) => await response.json())
             .then(data => {
-                setData(data.menuItems);
-                console.log(data.menuItems);
+                setData(data.results);
+                console.log(data.results);
             });
     }
 
