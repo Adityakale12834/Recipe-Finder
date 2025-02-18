@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Loading from "./components/Loading";
 import NavBar from "./components/NavBar";
 import ErrorBoundary from "./components/ErrorBoundary";
+import NewRecipe from "./components/NewRecipe";
 
 const Favourite = lazy(() => delayForDemo(import('./components/Favourites')));
 const Recipe = lazy(() => delayForDemo(import('./components/Recipe')));
@@ -32,6 +33,16 @@ export default function App() {
               <ErrorBoundary>
                 <Suspense fallback={<Loading />}>
                   <Recipe />
+                </Suspense>
+              </ErrorBoundary>
+            } />
+
+          <Route
+            path="/recipes"
+            element={
+              <ErrorBoundary>
+                <Suspense fallback={<Loading />}>
+                  <NewRecipe />
                 </Suspense>
               </ErrorBoundary>
             } />

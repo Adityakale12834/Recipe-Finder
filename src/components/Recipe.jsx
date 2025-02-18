@@ -17,7 +17,7 @@ function Recipe() {
     }
     useEffect(() => {
         getData();
-    }, [])
+    }, []);
     return (
         <div>
             <Hero />
@@ -67,7 +67,7 @@ function Recipe() {
                                                     <div>
                                                         <h1 className='font-bold'>Instructions</h1>
                                                         <div>
-                                                        <p className='text-wrap'>{step.step}</p>
+                                                            <p className='text-wrap'>{step.step}</p>
                                                         </div>
                                                     </div>
                                                 </ul>
